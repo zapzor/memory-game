@@ -1,20 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-export default function Score() {
-  const [score, setScore] = useState(0);
-  const [bestScore, setBestScore] = useState(0);
-
-  function scoreIncrement() {
-    setBestScore(score > bestScore ? score : bestScore);
-  }
-
-  useEffect(() => {
-    setBestScore(score > bestScore ? score : bestScore);
-  }, [score, bestScore]);
+export default function Score(props) {
+  const { score, bestScore } = props;
 
   return (
     <div>
-      <button onClick={() => setScore(score + 1)}>helloguys</button>
       <div>Score: {score}</div>
       <div>Best Score: {bestScore}</div>
     </div>

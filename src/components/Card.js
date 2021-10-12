@@ -1,22 +1,49 @@
 import React from 'react';
 
-export default function Card() {
+export default function Card(props) {
+  const { handleClick } = props;
+
   return (
     <div>
       <ul className='cards'>
-        <li className='test'>1</li>
-        <li className='test'>2</li>
-        <li className='test'>3</li>
-        <li className='test'>4</li>
-        <li className='test'>5</li>
-        <li className='test'>6</li>
-        <li className='test'>7</li>
-        <li className='test'>8</li>
-        <li className='test'>9</li>
-        <li className='test'>10</li>
-        <li className='test'>11</li>
-        <li className='test'>12</li>
+        <li className='card' onClick={handleClick}>
+          1
+        </li>
+        <li className='card' onClick={handleClick}>
+          2
+        </li>
+        <li className='card' onClick={handleClick}>
+          3
+        </li>
+        <li className='card' onClick={handleClick}>
+          4
+        </li>
+        <li className='card' onClick={handleClick}>
+          5
+        </li>
+        <li className='card' onClick={handleClick}>
+          6
+        </li>
+        <li className='card' onClick={handleClick}>
+          7
+        </li>
+        <li className='card' onClick={handleClick}>
+          8
+        </li>
+        <li onClick={handleClick}>9</li>
+        <li className='card' onClick={handleClick}>
+          10
+        </li>
+        <li className='card' onClick={handleClick}>
+          11
+        </li>
+        <li className='card' onClick={handleClick}>
+          12
+        </li>
       </ul>
     </div>
   );
 }
+
+// Increment score on clicking image that hasn't already been clicked
+// Reset score on clicking image that has already been clicked
