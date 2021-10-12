@@ -1,22 +1,17 @@
 import React from 'react';
+import Card from './Card';
+import Score from './Score';
 
 export default function Main() {
   return (
     <div>
-      <ul className='cards'>
-        <li className='test'>1</li>
-        <li className='test'>2</li>
-        <li className='test'>3</li>
-        <li className='test'>4</li>
-        <li className='test'>5</li>
-        <li className='test'>6</li>
-        <li className='test'>7</li>
-        <li className='test'>8</li>
-        <li className='test'>9</li>
-        <li className='test'>10</li>
-        <li className='test'>11</li>
-        <li className='test'>12</li>
-      </ul>
+      <Score />
+      <Card />
     </div>
   );
 }
+
+// Jumble grid randomly on clicking image
+// Increment score on clicking image that hasn't already been clicked
+// Reset score on clicking image that has already been clicked
+// Track the highest number the score has reached
