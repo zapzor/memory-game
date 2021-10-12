@@ -10,7 +10,3 @@ export default function Score(props) {
     </div>
   );
 }
-
-// Increment score on clicking image that hasn't already been clicked
-// Reset score on clicking image that has already been clicked
-// Track the highest number the score has reached
