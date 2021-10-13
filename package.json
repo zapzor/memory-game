@@ -20,7 +20,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "http://zapzor.github.io/cv-application",
+  "homepage": "http://zapzor.github.io/memory-game",
   "eslintConfig": {
     "extends": [
       "react-app",
