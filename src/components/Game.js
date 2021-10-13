@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import Score from './Score';
 
-export default function Main() {
+export default function Game() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [gameState, setGameState] = useState([]);
-  const [gameBoard, setGameBoard] = useState([
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
-  ]);
+  const [gameBoard, setGameBoard] = useState([...Array(12).keys()]);
 
   useEffect(() => {
     setBestScore(score > bestScore ? score : bestScore);
@@ -32,6 +30,7 @@ export default function Main() {
   function handleClick(event) {
     const number = event.target.id;
     checkGameState(number);
+    shuffleArray(gameBoard);
   }
 
   return (
