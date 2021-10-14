@@ -1,12 +1,17 @@
 import React from 'react';
+import './card-grid.css';
+import './card.css';
 
 export default function Card(props) {
   const { handleClick, gameBoard } = props;
-  const bar = gameBoard.map(() => {
-    const test = Math.round(Math.random() * 99);
+
+  //Maps numbers array to list
+  const mappedBoard = gameBoard.map(() => {
+    const number = Math.round(Math.random() * 99);
+
     return (
-      <li id={test} className='card' onClick={handleClick}>
-        {test}
+      <li id={number} className='card' onClick={handleClick}>
+        {number}
       </li>
     );
   });
@@ -18,7 +23,7 @@ export default function Card(props) {
         Gain points by clicking on a number, but don't click on any more than
         once!
       </div>
-      <ul className='cards'>{bar}</ul>
+      <ul className='cards'>{mappedBoard}</ul>
     </div>
   );
 }

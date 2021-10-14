@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Card from './Card';
-import Score from './Score';
+import Score from './score';
+import CardGrid from './game-grid';
 
 export default function Game() {
   const [score, setScore] = useState(0);
@@ -13,17 +13,25 @@ export default function Game() {
   }, [score, bestScore]);
 
   function shuffleArray(array) {
-    const shuffledArray = array.sort((a, b) => 0.5 - Math.random());
+    const shuffledArray = array.sort(() => 0.5 - Math.random());
     setGameBoard(shuffledArray);
   }
 
-  function checkGameState(props) {
-    if (gameState.includes(props)) {
-      setScore(0);
-      setGameState([]);
+  function restartGame() {
+    setScore(0);
+    setGameState([]);
+  }
+
+  function continueGame(number) {
+    setScore((prevScore) => prevScore + 1);
+    setGameState((prevArr) => [...prevArr, number]);
+  }
+
+  function checkGameState(number) {
+    if (gameState.includes(number)) {
+      restartGame();
     } else {
-      setScore(score + 1);
-      setGameState((prevArr) => [...prevArr, props]);
+      continueGame();
     }
   }
 
@@ -36,7 +44,7 @@ export default function Game() {
   return (
     <div>
       <Score score={score} bestScore={bestScore} />
-      <Card handleClick={handleClick} gameBoard={gameBoard} />
+      <CardGrid handleClick={handleClick} gameBoard={gameBoard} />
     </div>
   );
 }
